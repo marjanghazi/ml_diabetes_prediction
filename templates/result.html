@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="card result-card">
+
+        <div class="header">
+            <h1>Prediction Result</h1>
+            <p>Based on the provided medical parameters</p>
+        </div>
+
+        {% if prediction == "Diabetic" %}
+        <div class="result-box danger">
+            <h2>Diabetic</h2>
+            <p>
+                The model predicts a high likelihood of diabetes.
+                Please consult a medical professional for further evaluation.
+            </p>
+        </div>
+        {% else %}
+        <div class="result-box success">
+            <h2>Not Diabetic</h2>
+            <p>
+                The model predicts no signs of diabetes.
+                Maintaining a healthy lifestyle is still recommended.
+            </p>
+        </div>
+        {% endif %}
+
+        <a href="/" class="btn-secondary">Predict Again</a>
+
+        <div class="footer">
+            <p>This system is for educational purposes only</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
